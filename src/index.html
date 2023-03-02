@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   };
 
 
-  await fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
+  await fetch('https://pokeapi.co/api/v2/pokemon/?limit=10')
   .then(response => response.json())
   .then((data) => {
     console.log("data from pokedex :"+JSON.stringify(data.results));
@@ -59,6 +59,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     console.log("element.name: "+element.name);
     let li = document.createElement("li");
   li.appendChild(document.createTextNode(`${element.name}`));
+  //li.innerText = `${element.name}`;
   li.setAttribute("id", `element${index}`); // added line
   ul.appendChild(li);
   });
