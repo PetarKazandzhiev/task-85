@@ -37,10 +37,11 @@ window.addEventListener("DOMContentLoaded", async () => {
   };
 
 
-  await fetch('https://pokeapi.co/api/v2/pokemon/?limit=10')
+  await fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
   .then(response => response.json())
   .then((data) => {
-    console.log("data from pokedex :"+JSON.stringify(data.results));
+    console.log("data. from pokedex :"+JSON.stringify(data));
+    console.log("data.results from pokedex :"+JSON.stringify(data.results));
 
     //must see what the response is before continuing
     pokemonArray = data.results;
