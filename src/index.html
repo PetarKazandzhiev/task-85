@@ -18,5 +18,53 @@
         </div>
       </article>
     </main>
+    <script >
+
+
+window.addEventListener("DOMContentLoaded", async () => {
+  // This block will be executed once the page is loaded and ready
+
+  console.log("goes in the DOMContentLoaded");
+
+  let pokemonArray =  [];
+
+  const requestInput = {
+    method: 'GET',
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      
+    }),
+  };
+
+
+  await fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
+  .then(response => response.json())
+  .then((data) => {
+    console.log("data from pokedex :"+JSON.stringify(data.results));
+
+    //must see what the response is before continuing
+    pokemonArray = data.results;
+    })
+
+  let ul = document.querySelector("ul");
+
+  console.log("after the fetch ");
+
+  console.log("typeof pokemonArray: "+typeof pokemonArray);
+  console.log("pokemonArray: "+JSON.stringify(pokemonArray));
+
+
+
+  pokemonArray.forEach((element,index) => {
+    console.log("element.name: "+element.name);
+    let li = document.createElement("li");
+  li.appendChild(document.createTextNode(`${element.name}`));
+  li.setAttribute("id", `element${index}`); // added line
+  ul.appendChild(li);
+  });
+  
+
+});
+    </script>
   </body>
 </html>
