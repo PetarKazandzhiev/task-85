@@ -24,9 +24,10 @@ const htmlPluginEntries = templateFiles.map((template) => new HTMLWebpackPlugin(
 }));
 
 module.exports = {
-  entry: {
-    app: path.resolve(environment.paths.source, 'js', 'app.js'),
-  },
+  // entry: {
+  //   //app: path.resolve(environment.paths.source, 'js', 'app.js'),
+  // },
+  entry: ["@babel/polyfill", "./src/js/app.js"],
   output: {
     filename: 'js/[name].js',
     path: environment.paths.output,
