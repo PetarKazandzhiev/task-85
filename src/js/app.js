@@ -27,7 +27,7 @@ function getPokemonInfo () {
 //   };
 
 
-//   fetch('https://pokeapi.co/api/v2/pokemon',requestInput)
+//   fetch('https://pokeapi.co/api/v2/pokemon?limit=10',requestInput)
 //   .then((res) => {
 //   res.json();
 //   })
